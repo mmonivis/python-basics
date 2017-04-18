@@ -40,5 +40,7 @@ age = raw_input("How old are you?")
 age_as_int = int(age)
 # print type(age)
 if (age_as_int >= 21):
-    print "You can buy beer"
+    print "You can buy beer."
+else:
+    print "You are underage."
 
