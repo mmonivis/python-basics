@@ -36,11 +36,23 @@ print "Hello, {} {}".format(first_name, last_name)
 # if(first_name == last_name):
 #     print "Your first name is the same as your last name?"
 
-age = raw_input("How old are you?")
-age_as_int = int(age)
-# print type(age)
-if (age_as_int >= 21):
-    print "You can buy beer."
-else:
-    print "You are underage."
+# age = raw_input("How old are you?")
+# age_as_int = int(age)
+# # print type(age)
+# if (age_as_int >= 21):
+#     print "You can buy beer."
+# else:
+#     print "You are underage."
+
+import random
+random_number = random.randint(1,10)
+
+# Loop - Keep doing something until I tell you to stop
+still_guessing = True;
+while still_guessing:
+    guess_a_number = raw_input("Guess a number between 1 and 10. ")
+    if (int(guess_a_number) == random_number):
+        print "You guessed the number!";
+        still_guessing = False;
+
 
