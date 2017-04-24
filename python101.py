@@ -211,58 +211,81 @@
 # print(person["gender"])
 # print(person["height"])
 
-zombie = {}
-zombie['weapon'] = "axe"
-zombie['health'] = 100
-zombie['startX'] = 10
-zombie['startY'] = 20
+# zombie = {}
+# zombie['weapon'] = "axe"
+# zombie['health'] = 100
+# zombie['startX'] = 10
+# zombie['startY'] = 20
 
-print zombie
+# print zombie
 
-for key, value in zombie.items():
-    print "Zombie has a key of %s with a value of %s" % (key, value)
-    print (zombie[key])
+# for key, value in zombie.items():
+#     print "Zombie has a key of %s with a value of %s" % (key, value)
+#     print (zombie[key])
 
-if (zombie["speed"] <= 5):
-    zombie["position"] = zombie[startX] + 5
-elif (zombie["speed"] <= 10):
-    zombie["position"] = zombie[startX] + 10
-else:
-    zombie["position"] = zombie[startX] + 15
+# if (zombie["speed"] <= 5):
+#     zombie["position"] = zombie[startX] + 5
+# elif (zombie["speed"] <= 10):
+#     zombie["position"] = zombie[startX] + 10
+# else:
+#     zombie["position"] = zombie[startX] + 15
 
-zombie['pointless'] = "Why?"
-print zombie
-# remove key + value
-del zombie['pointless']
-print zombie
+# zombie['pointless'] = "Why?"
+# print zombie
+# # remove key + value
+# del zombie['pointless']
+# print zombie
 
-player_push = "up"
-# variable key names
-if (player_push == "up"):
-    direction = "startY"
-else:
-    direction = "startX"
-zombie[direction] += 10
+# player_push = "up"
+# # variable key names
+# if (player_push == "up"):
+#     direction = "startY"
+# else:
+#     direction = "startX"
+# zombie[direction] += 10
 
-zombies = []
-zombies.append({
-    'speed': 10,
-    'weapon': 'fist',
-    'name': 'Hank'
-})
-zombies.append({
-    'speed': 5,
-    'weapon': 'baseball bat',
-    'name': 'Bruiser'
-})
+# zombies = []
+# zombies.append({
+#     'speed': 10,
+#     'weapon': 'fist',
+#     'name': 'Hank'
+# })
+# zombies.append({
+#     'speed': 5,
+#     'weapon': 'baseball bat',
+#     'name': 'Bruiser'
+# })
 
-# get the second zombie's speed...
-print (zombies[1]['speed'])
+# # get the second zombie's speed...
+# print (zombies[1]['speed'])
 
-zombies[1]['victims'] = [
-    'Jane',
-    'Mike',
-    'Bob'
-]
+# zombies[1]['victims'] = [
+#     'Jane',
+#     'Mike',
+#     'Bob'
+# ]
 
-print (zombies[1]['victims'][2])
+# print (zombies[1]['victims'][2])
+
+
+# ---
+
+x = 3
+y = 0
+
+def get_number():
+    global y
+    y = 5
+    a = 2
+
+def calc():
+    # x is now global
+    global x
+    x = x + y
+    # x = 5
+    print x
+
+print y
+get_number() # this will change global y from 0 to 5
+calc()
+print x
