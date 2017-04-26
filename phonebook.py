@@ -28,6 +28,29 @@ def look_up_entry(name):
             os.system("clear")
             return n
         else:
+           os.system("clear")
+            print ("%s is not in the list. Try again!\n") % (name)
+
+def set_an_entry(name, phone_number):
+    new_dict = {"name": name, "phone_number": phone_number}
+    phonebook_data.append(new_dict)
+    os.system("clear")
+    print ("%s has been added.\n" % name)
+
+def Delete_an_entry(name):
+    for n in phonebook_data:
+        if name in n.values():
+            phonebook_data.remove(n)
+
+def list_all_entry(phone_book):
+    print (phone_book)
+
+def search_entry(data):
+    for n in phonebook_data:
+        if data in n.values():
+            os.system("clear")
+            return n
+        else:
             os.system("clear")
             print ("%s is not in the list. Try again!\n") % (name)
 
@@ -57,18 +80,35 @@ while 1:
         if (convert_user == 1):
             name_user = raw_input("Who do you want to look up?\n")
             print (look_up_entry(name_user))
+
         # SET AN ENTRY
         elif (convert_user == 2):
             print ("Please enter a name:\n")
-            user_name = input("> ")
+            user_name = raw_input("> ")
             print ("Please enter a phone number:\n")
-            user_number = input("> ")
+            user_number = raw_input("> ")
+
+            set_an_entry(user_name, user_number)
+
         # DELETE AN ENTRY
+        elif (convert_user == 3):
+                del_user = raw_input("Who would you like to remove?\n ")
+                Delete_an_entry(del_user)
+                print ("Entry has been removed.\n")
+
         # LIST ALL ENTRIES
+        elif (convert_user == 4):
+                list_all_entry(phonebook_data)
+
         # SEARCH FOR AN ENTRY
+        elif (convert_user == 5):
+                data_user = raw_input("Enter a name or phone number:\n")
+                print(look_up_entry(data_user))
+
         # QUIT
         elif(convert_user == 6):
             # User chose to quit, so leave the loop
+            print ("Exit.")
             break
 
 
